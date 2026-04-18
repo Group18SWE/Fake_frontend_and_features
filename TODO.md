@@ -19,7 +19,7 @@
 
 ## Backend and data quality
 - [ ] Add request/response schemas (Pydantic models) for API contracts.
-- [ ] Add retry/backoff and observability for Semantic Scholar, ar5iv, and GenAI calls.
+- [ ] Add retry/backoff and observability for Semantic Scholar, arXiv/ar5iv, and GenAI calls.
 - [ ] Improve deduplication and canonicalization of model/dataset entities.
 - [ ] Add migration/index strategy for Neo4j labels and relationships.
 - [ ] Add configurable concurrency and timeout controls via environment variables.

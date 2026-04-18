@@ -5,7 +5,7 @@ An end-to-end app for exploring connections between **papers**, **ML models**, a
 - **Frontend:** React + Vite + D3 graph explorer
 - **Backend:** FastAPI pipeline
 - **Data store:** Neo4j
-- **External services:** Semantic Scholar API, ar5iv HTML, Google GenAI
+- **External services:** Semantic Scholar API, arXiv HTML (via ar5iv), Google GenAI
 
 ## What works right now
 
@@ -34,7 +34,7 @@ An end-to-end app for exploring connections between **papers**, **ML models**, a
   1. Translate user query to Semantic Scholar keywords (`generate_semantic_scholar_query`)
   2. Fetch candidate papers from Semantic Scholar (`search_papers`)
   3. Keep papers that contain arXiv IDs
-  4. For each paper: fetch ar5iv HTML, extract models/datasets via GenAI, upsert into Neo4j
+  4. For each paper: fetch arXiv HTML (via ar5iv), extract models/datasets via GenAI, upsert into Neo4j
   5. Read graph from Neo4j and return `{ nodes, edges }`
 - Test/support endpoints:
   - `GET /`
@@ -51,7 +51,7 @@ An end-to-end app for exploring connections between **papers**, **ML models**, a
   - `main.py` — app bootstrap + CORS + worker startup
   - `api/routes.py` — HTTP endpoints
   - `core/database.py` — Neo4j connectivity and graph queries
-  - `services/` — Semantic Scholar, ar5iv parsing, LLM integration, paper processing
+  - `services/` — Semantic Scholar, arXiv HTML parsing (via ar5iv), LLM integration, paper processing
   - `worker/` — async queue + background processor
 
 ## Prerequisites
